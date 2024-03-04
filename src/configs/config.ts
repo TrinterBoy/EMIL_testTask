@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { Accident, Contract, User } from './src/models';
+import { Accident, Contract, User } from '../models';
 
 type Config = {
   dialect: string;

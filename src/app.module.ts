@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { AppService } from './app.service';
 import { SequelizeModule, SequelizeModuleOptions } from '@nestjs/sequelize';
-import { appConfig, models } from '../config';
+import { appConfig, models } from './configs/config';
 
 const postgresConfig = appConfig.getPostgresConnection();
 
