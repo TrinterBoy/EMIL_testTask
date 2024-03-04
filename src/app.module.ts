@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AppService } from './app.service';
 import { SequelizeModule, SequelizeModuleOptions } from '@nestjs/sequelize';
-import { appConfig, models } from './configs/config';
+import { appConfig, models } from './configs';
+import { UserModule } from './modules/user/user.module';
+import { AuthModule } from './modules/auth/auth.module';
 
 const postgresConfig = appConfig.getPostgresConnection();
 
@@ -12,8 +13,10 @@ const postgresConfig = appConfig.getPostgresConnection();
       models,
       logging: false,
     }),
+    UserModule,
+    AuthModule,
   ],
   controllers: [],
-  providers: [AppService],
+  providers: [],
 })
 export class AppModule {}
