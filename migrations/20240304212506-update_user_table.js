@@ -53,10 +53,10 @@ module.exports = {
   async down(queryInterface, Sequelize) {
     const transaction = await queryInterface.sequelize.transaction();
     try {
-      await queryInterface.removeIndex('users', 'name',{ transaction });
-      await queryInterface.removeIndex('users', 'surName',{ transaction });
-      await queryInterface.removeIndex('users', 'phone',{ transaction });
-      await queryInterface.removeIndex('users', 'passportCode',{ transaction });
+      await queryInterface.removeColumn('users', 'name',{ transaction });
+      await queryInterface.removeColumn('users', 'surName',{ transaction });
+      await queryInterface.removeColumn('users', 'phone',{ transaction });
+      await queryInterface.removeColumn('users', 'passportCode',{ transaction });
       await transaction.commit();
     } catch (err) {
       await transaction.rollback();

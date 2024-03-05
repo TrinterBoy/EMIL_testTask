@@ -10,7 +10,7 @@ import {
 } from 'sequelize-typescript';
 import { User } from './users';
 import { Contract } from './contracts';
-enum AccidentStatus {
+export enum AccidentStatus {
   APPROVED = 'approved',
   DECLINED = 'declined',
   UNDER_CONSIDERATION = 'under_consideration',
