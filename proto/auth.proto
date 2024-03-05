@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package auth;
+
+service AuthService {
+  rpc SignUp (SingUpRequestDto) returns (User) {}
+  rpc SignIn (SingInRequestDto) returns (SuccessMessage) {}
+  rpc PasswordChange (PasswordChangeRequestDto) returns (SuccessMessage) {}
+}
+
+message SuccessMessage {
+  string message = 1;
+}
+
+message PasswordChangeRequestDto {
+  string oldPassword = 1;
+  string newPassword = 2;
+}
+
+message SingUpRequestDto {
+  string id = 1;
+  string name = 2;
+  string surName = 3;
+  string email = 4;
+  string password = 5;
+  string passwordConfirm = 6;
+  string phone = 7;
+  string passportCode = 8;
+}
+
+message SingInRequestDto {
+  string email = 1;
+  string password = 2;
+}
+
+message User {
+  string id = 1;
+  string name = 2;
+  string surName = 3;
+  string email = 4;
+  string password = 5;
+  string phone = 6;
+  string passportCode = 7;
+}
