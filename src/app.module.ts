@@ -3,6 +3,8 @@ import { SequelizeModule, SequelizeModuleOptions } from '@nestjs/sequelize';
 import { appConfig, models } from './configs';
 import { UserModule } from './modules/user/user.module';
 import { AuthModule } from './modules/auth/auth.module';
+import { AccidentModule } from './modules/accident/accident.module';
+import { ContractModule } from './modules/contract/contract.module';
 
 const postgresConfig = appConfig.getPostgresConnection();
 
@@ -15,6 +17,8 @@ const postgresConfig = appConfig.getPostgresConnection();
     }),
     UserModule,
     AuthModule,
+    AccidentModule,
+    ContractModule,
   ],
   controllers: [],
   providers: [],

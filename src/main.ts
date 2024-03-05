@@ -13,7 +13,7 @@ async function bootstrap() {
     .setTitle('BACKEND')
     .setDescription('REST API')
     .setVersion('1.0.0')
-    .addTag('Time Tracking')
+    .addTag('TEST TASK')
     .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, config);
@@ -23,6 +23,5 @@ async function bootstrap() {
   app.useGlobalFilters(new AllExceptionsFilter());
 
   await app.listen(port || 3000);
-
 }
 bootstrap();

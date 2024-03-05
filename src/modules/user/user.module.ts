@@ -10,12 +10,7 @@ import { UserController } from './user.controller';
 
 @Module({
   imports: [SequelizeModule.forFeature([User])],
-  providers: [
-    UserService,
-    AuthService,
-    JwtService,
-    UserRepository,
-  ],
+  providers: [UserService, AuthService, JwtService, UserRepository],
   controllers: [UserController],
   exports: [UserService],
 })
